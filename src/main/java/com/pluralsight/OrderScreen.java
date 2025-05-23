@@ -34,7 +34,7 @@ public class OrderScreen {
             case "4":
                 System.out.println("Checkout: ");
                 break;
-            case "5":
+            case "0":
                 System.out.println("Order canceled! Returning to Homescreen...");
                 orderInProgress = false;
                 break;

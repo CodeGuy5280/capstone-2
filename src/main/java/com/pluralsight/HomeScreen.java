@@ -27,7 +27,6 @@ public class HomeScreen {
                 System.out.println("Invalid input. Please enter only 1 or 0.");
                 scanner.nextLine();
             }
-            scanner.close();
         }
     }
 }
