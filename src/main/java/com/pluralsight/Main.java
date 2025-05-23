@@ -5,5 +5,6 @@ public class Main {
 
 
         HomeScreen homeScreen = new HomeScreen();
+        OrderScreen newOrder = new OrderScreen();
     }
 }
