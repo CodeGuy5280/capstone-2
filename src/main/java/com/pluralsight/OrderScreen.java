@@ -23,14 +23,20 @@ public class OrderScreen {
 
             switch (choice) {
             case "1":
+                System.out.println("Select a sandwich: ");
                 break;
             case "2":
+                System.out.println("Select a drink: ");
                 break;
             case "3":
+                System.out.println("Select a type of chips: ");
                 break;
             case "4":
+                System.out.println("Checkout: ");
                 break;
             case "5":
+                System.out.println("Order canceled! Returning to Homescreen...");
+                orderInProgress = false;
                 break;
             default:
                 System.out.println("Please select a valid option.");
