@@ -16,11 +16,15 @@ public class Order {
     }
 
     public double getTotalPrice() {
-        double totalPrice;
+        double totalPrice = 0.0;
         for(Drink drink : drinks){
           totalPrice = drink.calculatePrice();
         }
-        return 0;
+        //for (Sandwich sandwich : sandwiches) {
+            //     totalPrice += sandwich.calculatePrice();
+        //for (Sandwich chips : chips) {
+            //     totalPrice += chips.calculatePrice();
+        return totalPrice;
     }
 
 
