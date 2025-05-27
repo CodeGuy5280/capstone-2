@@ -8,10 +8,10 @@ public class OrderScreen {
     private static final Scanner scanner = new Scanner(System.in);
 
 
-    public void newOrder(){
+    public void newOrder() {
 
         boolean orderInProgress = true;
-        while(orderInProgress){
+        while (orderInProgress) {
             System.out.println("\n--- New Order ---");
             System.out.println("1) Add Sandwich");
             System.out.println("2) Add Drink");
@@ -24,30 +24,30 @@ public class OrderScreen {
             String choice = scanner.nextLine();
 
             switch (choice) {
-            case "1":
-                System.out.println("Select a sandwich or build your own: ");
-                Sandwich.preBuiltSandwich();
-                scanner.nextLine();
-                break;
-            case "2":
-                System.out.println("Select a drink: ");
-                //class.method();
-                break;
-            case "3":
-                System.out.println("Select a type of chips: ");
-                //class.method();
-                break;
-            case "4":
-                System.out.println("Checkout: ");
-                //class.method();
-                break;
-            case "0":
-                System.out.println("Order canceled! Returning to Homescreen...");
-                orderInProgress = false;
-                break;
-            default:
-                System.out.println("Please select a valid option.");
-        }
+                case "1":
+                    System.out.println("Select a sandwich or build your own: ");
+                    Sandwich.preBuiltSandwich();
+                    scanner.nextLine();
+                    break;
+                case "2":
+                    System.out.println("Select a drink: ");
+                    //class.method();
+                    break;
+                case "3":
+                    System.out.println("Select a type of chips: ");
+                    //class.method();
+                    break;
+                case "4":
+                    System.out.println("Checkout: ");
+                    //class.method();
+                    break;
+                case "0":
+                    System.out.println("Order canceled! Returning to Homescreen...");
+                    orderInProgress = false;
+                    break;
+                default:
+                    System.out.println("Please select a valid option.");
+            }
         }
     }
 }

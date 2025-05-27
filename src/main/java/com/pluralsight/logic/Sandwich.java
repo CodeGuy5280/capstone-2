@@ -13,30 +13,30 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Sandwich {
-Scanner scanner = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
 
-public static void preBuiltSandwich(){//DONE
-    //blt, club, roast beef, turkey swiss
-    //each prebuilt will not be editable for simplicity, instead direct user to create their own.
-    //need to be stored as set costs based on size only
-    boolean running = true;
+    public static void preBuiltSandwich() {//DONE
+        //blt, club, roast beef, turkey swiss
+        //each prebuilt will not be editable for simplicity, instead direct user to create their own.
+        //need to be stored as set costs based on size only
+        boolean running = true;
 
-    while (running){
-        System.out.println("1) BLT");
-        System.out.println("2) CLUB");
-        System.out.println("3) ROAST BEEF");
-        System.out.println("4) TURKEY SWISS");
-        System.out.println("5) BUILD YOUR OWN");
+        while (running) {
+            System.out.println("1) BLT");
+            System.out.println("2) CLUB");
+            System.out.println("3) ROAST BEEF");
+            System.out.println("4) TURKEY SWISS");
+            System.out.println("5) BUILD YOUR OWN");
 //        buildYourOwn();
-        System.out.println("0) EXIT TO MAIN MENU");
-        System.out.println("Enter your choice: "); //done
+            System.out.println("0) EXIT TO MAIN MENU");
+            System.out.println("Enter your choice: "); //done
+        }
     }
-}
 
-public void buildYourOwn(){
-    //connect with all options for selecting, serves as an interface for building a sandwich
-    //connect via Arraylists: bread, cheese, toppings, toasted (y/n)
-}
+    public void buildYourOwn() {
+        //connect with all options for selecting, serves as an interface for building a sandwich
+        //connect via Arraylists: bread, cheese, toppings, toasted (y/n)
+    }
 
 
     private ArrayList<String> breads = new ArrayList<>();
@@ -55,7 +55,7 @@ public void buildYourOwn(){
             System.out.println("5) LETTUCE: ");
             String choice = scanner.nextLine();
 
-            switch (choice){
+            switch (choice) {
                 case "1":
                     break;
                 case "2":
