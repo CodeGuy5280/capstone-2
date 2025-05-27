@@ -1,4 +1,6 @@
-package com.pluralsight;
+package com.pluralsight.userinput;
+
+import com.pluralsight.logic.Sandwich;
 
 import java.util.Scanner;
 
@@ -23,8 +25,9 @@ public class OrderScreen {
 
             switch (choice) {
             case "1":
-                System.out.println("Select a sandwich: ");
-                //class.method();
+                System.out.println("Select a sandwich or build your own: ");
+                scanner.nextLine();
+                Sandwich.preBuiltSandwich();
                 break;
             case "2":
                 System.out.println("Select a drink: ");

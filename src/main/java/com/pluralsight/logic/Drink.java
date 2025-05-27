@@ -1,14 +1,13 @@
-package com.pluralsight;
+package com.pluralsight.logic;
 
 public class Drink {
 
     private String size;
     private String flavor;
 
-    public Drink(String s, String f) {
-        this.size = s;
-        this.flavor = f;
-
+    public Drink(String size, String flavor) {
+        this.size = size;
+        this.flavor = flavor;
     }
 
     public String getSize() {
@@ -25,7 +24,6 @@ public class Drink {
 
     public void setFlavor(String flavor) {
         this.flavor = flavor;
-
     }
 
     public double calculatePrice(){
