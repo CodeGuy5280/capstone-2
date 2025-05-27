@@ -26,7 +26,7 @@ public class OrderScreen {
             switch (choice) {
                 case "1":
                     System.out.println("Select a sandwich or build your own: ");
-                    Sandwich.preBuiltSandwich();
+                    Sandwich.createPrebuiltSandwich(scanner);
                     scanner.nextLine();
                     break;
                 case "2":
