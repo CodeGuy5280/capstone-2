@@ -15,8 +15,8 @@ public class OrderScreen {
             System.out.println("2) Add Drink");
             System.out.println("3) Add Chips");
             System.out.println("4) Checkout");
-            System.out.println("0) Cancel Order");
-            System.out.println("Enter your choice: ");
+            System.out.println("0) Cancel Order"); //done
+            System.out.println("Enter your choice: "); //done
 
 
             String choice = scanner.nextLine();
@@ -24,15 +24,19 @@ public class OrderScreen {
             switch (choice) {
             case "1":
                 System.out.println("Select a sandwich: ");
+                //class.method();
                 break;
             case "2":
                 System.out.println("Select a drink: ");
+                //class.method();
                 break;
             case "3":
                 System.out.println("Select a type of chips: ");
+                //class.method();
                 break;
             case "4":
                 System.out.println("Checkout: ");
+                //class.method();
                 break;
             case "0":
                 System.out.println("Order canceled! Returning to Homescreen...");
