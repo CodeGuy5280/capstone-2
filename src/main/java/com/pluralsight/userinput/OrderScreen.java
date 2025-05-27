@@ -1,5 +1,7 @@
 package com.pluralsight.userinput;
 
+import com.pluralsight.logic.Chips;
+import com.pluralsight.logic.Drink;
 import com.pluralsight.logic.Sandwich;
 
 import java.util.Scanner;
@@ -31,12 +33,12 @@ public class OrderScreen {
                     break;
                 case "2":
                     System.out.println("Select a drink: ");
-                    //class.method();
+                    Drink selectedDrink = new Drink("small", "Dr. Pepper");
                     break;
                 case "3":
                     System.out.println("Select a type of chips: ");
-                    //class.method();
-                    break;
+                    Chips selectedChips = new Chips("BBQ");
+                    System.out.println(selectedChips.getFlavor() + " chips added.");                    break;
                 case "4":
                     System.out.println("Checkout: ");
                     //class.method();
