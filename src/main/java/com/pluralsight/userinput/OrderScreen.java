@@ -57,6 +57,7 @@ public class OrderScreen {
                     String chipsChoice = scanner.nextLine();
 
                     Chips selectedChips = null;
+                    //possibly add a Try Catch Block here
                     int chipsSelection = Integer.parseInt(chipsChoice) - 1;
                     if (chipsSelection >= 0 && chipsSelection < Chips.getAvailableFlavors().size()) {
                         selectedChips = new Chips(Chips.getAvailableFlavors().get(chipsSelection));
@@ -67,7 +68,7 @@ public class OrderScreen {
                     }
 
                     if (selectedChips != null) {
-                        // Add selectedChips to Order object
+                        currentOrder.addChips(selectedChips);
                         System.out.println(selectedChips.getFlavor() + " added to order.");
                     }
                     break;

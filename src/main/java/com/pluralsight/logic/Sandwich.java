@@ -1,20 +1,12 @@
 package com.pluralsight.logic;
 
-/*select bread (white, wheat, rye, wrap)
- * sandwich size (4", 8", 12")
- * toppings:
- *   (premium extra cost for extra) meat, cheese
- *   (regular) all other toppings, sauces
- * toasted (y/n)
- * can order more than one sandwich
- *  must be prompted to customize each one at a time*/
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Sandwich {
     private String breadType;
     private String size; // e.g., "4-inch", "8-inch", "12-inch"
+    private String name;
     private ArrayList<String> meats = new ArrayList<>();
     private ArrayList<String> cheeses = new ArrayList<>();
     private ArrayList<String> regularToppings = new ArrayList<>(); // For veggies, sauces, etc.
@@ -24,6 +16,7 @@ public class Sandwich {
         // Constructor for pre-built
         this.breadType = breadType;
         this.size = size;
+        this.name = name;
         this.meats = new ArrayList<>();
         this.cheeses = new ArrayList<>();
         this.regularToppings = new ArrayList<>();
@@ -31,7 +24,7 @@ public class Sandwich {
     }
 
 
-    public static Sandwich createPrebuiltSandwich(Scanner scanner) { // Method now returns a Sandwich object
+    public static Sandwich createPrebuiltSandwich(Scanner scanner) { // Method returns a Sandwich object
         while (true) { // Loop indefinitely until a valid choice is made and returned, or user exits
             System.out.println("\n--- Select a Pre-Built Sandwich ---");
             System.out.println("1) BLT");
@@ -39,11 +32,12 @@ public class Sandwich {
             System.out.println("3) ROAST BEEF");
             System.out.println("4) TURKEY SWISS");
             System.out.println("5) BUILD YOUR OWN"); // This option should lead to the buildYourOwn process
-            System.out.println("0) Go Back to Order Menu"); // User can explicitly go back
+            System.out.println("0) Go Back to Order Menu");
             System.out.print("Enter your choice: ");
 
-            String choice = scanner.nextLine(); // <<<< IMPORTANT: Reads user input here!
+            String choice = scanner.nextLine();
 
+            //need to allow for sandwich size choices to be made
             switch (choice) {
                 case "1":
                     return new Sandwich("BLT", "White", "8-inch");
