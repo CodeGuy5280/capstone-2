@@ -2,21 +2,31 @@ package com.pluralsight.logic;
 
 // import java.util.ArrayList;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Chips {
 
     private String flavor;
-    private boolean isSelected; // Renamed for clarity and to avoid conflict
+    private boolean isSelected;
+
+    private static final ArrayList<String> AVAILABLE_FLAVORS =
+            new ArrayList<>(Arrays.asList("Classic", "BBQ", "Salt & Vinegar", "Sour Cream & Onion"));
+
+    public static ArrayList<String> getAvailableFlavors() {
+        return AVAILABLE_FLAVORS;
+    }
 
     public Chips(String flavor) {
         this.flavor = flavor;
         this.isSelected = true;
     }
 
-    //default constructor if need an unselected/empty chip object
-//    public Chips() {
-//        this.flavor = " "; // Or null, or an empty string
-//        this.isSelected = false;
-//    }
+    //    default constructor if need an unselected/empty chip object
+    public Chips() {
+        this.flavor = " "; // Or null, or an empty string
+        this.isSelected = false;
+    }
 
 
     public String getFlavor() {

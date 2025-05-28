@@ -29,16 +29,36 @@ public class OrderScreen {
                 case "1":
                     System.out.println("Select a sandwich or build your own: ");
                     Sandwich.createPrebuiltSandwich(scanner);
-                    scanner.nextLine();
                     break;
                 case "2":
                     System.out.println("Select a drink: ");
                     Drink selectedDrink = new Drink("small", "Dr. Pepper");
                     break;
                 case "3":
-                    System.out.println("Select a type of chips: ");
-                    Chips selectedChips = new Chips("BBQ");
-                    System.out.println(selectedChips.getFlavor() + " chips added.");                    break;
+                    System.out.println("--- Select a Type of Chips ---");
+                    // Loop through the static list from the Chips class to display options
+                    for (int i = 0; i < Chips.getAvailableFlavors().size(); i++) {
+                        System.out.println((i + 1) + ") " + Chips.getAvailableFlavors().get(i));
+                    }
+                    System.out.println("0) Cancel Chips Selection");
+                    System.out.print("Enter your chips choice: ");
+                    String chipsChoice = scanner.nextLine();
+
+                    Chips selectedChips = null;
+                    int chipsSelection = Integer.parseInt(chipsChoice) - 1;
+                    if (chipsSelection >= 0 && chipsSelection < Chips.getAvailableFlavors().size()) {
+                        selectedChips = new Chips(Chips.getAvailableFlavors().get(chipsSelection));
+                    } else if (chipsChoice.equals("0")) {
+                        System.out.println("Chips selection cancelled.");
+                    } else {
+                        System.out.println("Invalid chips choice.");
+                    }
+
+                    if (selectedChips != null) {
+                        // Add selectedChips to your Order object
+                        System.out.println(selectedChips.getFlavor() + " added to order.");
+                    }
+                    break;
                 case "4":
                     System.out.println("Checkout: ");
                     //class.method();
