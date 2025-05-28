@@ -11,6 +11,11 @@ public class OrderScreen {
     private static final Scanner scanner = new Scanner(System.in);
     private Order currentOrder;
 
+    //constructor to assign currentOrder
+    public OrderScreen(){
+        this.currentOrder = new Order();
+    }
+
 
     public void newOrder() {
 
@@ -77,7 +82,9 @@ public class OrderScreen {
                 default:
                     System.out.println("Please select a valid option.");
             }
-
         }
+    }
+    private void generateReceipt(){
+
     }
 }
