@@ -1,6 +1,7 @@
 package com.pluralsight.logic;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class Order {
@@ -35,9 +36,6 @@ public class Order {
         double totalPrice = 0.0;
         for (Drink drink : drinks) {
             totalPrice += drink.calculatePrice();
-        }
-        for (Sandwich sandwich : sandwich) {
-            totalPrice += sandwich.calculatePrice();
         }
         for (Chips chips : chips) {
             totalPrice += chips.calculatePrice();
