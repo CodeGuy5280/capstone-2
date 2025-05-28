@@ -2,12 +2,14 @@ package com.pluralsight.userinput;
 
 import com.pluralsight.logic.Chips;
 import com.pluralsight.logic.Drink;
+import com.pluralsight.logic.Order;
 import com.pluralsight.logic.Sandwich;
 
 import java.util.Scanner;
 
 public class OrderScreen {
     private static final Scanner scanner = new Scanner(System.in);
+    private Order currentOrder;
 
 
     public void newOrder() {
@@ -32,11 +34,16 @@ public class OrderScreen {
                     break;
                 case "2":
                     System.out.println("Select a drink: ");
-                    Drink selectedDrink = new Drink("small", "Dr. Pepper");
+                    // Call the static method from the Drink class to handle selection
+                    Drink selectedDrink = Drink.selectDrink(scanner);
+                    if (selectedDrink != null) { // If a drink was actually selected (not cancelled)
+                        currentOrder.addDrink(selectedDrink); // Add the selected drink to the current order
+                        System.out.println(selectedDrink.getName() + " (" + selectedDrink.getSize() + ") added to order!");
+                    }
                     break;
                 case "3":
                     System.out.println("--- Select a Type of Chips ---");
-                    // Loop through the static list from the Chips class to display options
+                    // Loop through list from the Chips class to display options
                     for (int i = 0; i < Chips.getAvailableFlavors().size(); i++) {
                         System.out.println((i + 1) + ") " + Chips.getAvailableFlavors().get(i));
                     }
@@ -55,7 +62,7 @@ public class OrderScreen {
                     }
 
                     if (selectedChips != null) {
-                        // Add selectedChips to your Order object
+                        // Add selectedChips to Order object
                         System.out.println(selectedChips.getFlavor() + " added to order.");
                     }
                     break;
@@ -70,6 +77,7 @@ public class OrderScreen {
                 default:
                     System.out.println("Please select a valid option.");
             }
+
         }
     }
 }

@@ -25,7 +25,6 @@ public class HomeScreen {
                 homeSelect = false;
             } else {
                 System.out.println("Invalid input. Please enter only 1 or 0.");
-                scanner.nextLine();
             }
         }
     }

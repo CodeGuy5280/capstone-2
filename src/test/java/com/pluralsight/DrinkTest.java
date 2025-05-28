@@ -10,7 +10,7 @@ class DrinkTest {
     @Test
     void calculatePrice() {
         String sz = "small";
-        Drink dc = new Drink(sz, "diet coke");
+        Drink dc = new Drink();
 
         double actualPrice = dc.calculatePrice();
 
