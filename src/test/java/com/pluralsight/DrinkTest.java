@@ -9,8 +9,7 @@ class DrinkTest {
 
     @Test
     void calculatePrice() {
-        String sz = "small";
-        Drink dc = new Drink();
+        Drink dc = new Drink("Cola", "small", 2.0);
 
         double actualPrice = dc.calculatePrice();
 

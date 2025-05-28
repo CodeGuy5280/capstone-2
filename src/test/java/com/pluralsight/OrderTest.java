@@ -11,8 +11,8 @@ class OrderTest {
     @Test
     void getTotalPriceForDrinks() { // Renamed method for clarity
         // Create drinks with very simple, clear prices
-        Drink drink1 = new Drink("Water", "small", 1.00); // Price: $1.00
-        Drink drink2 = new Drink("Juice", "medium", 2.00); // Price: $2.00
+        Drink drink1 = new Drink("Water", "small", 1.0); // Price: $1.00
+        Drink drink2 = new Drink("Juice", "medium",2.0); // Price: $2.00
 
         Order order = new Order();
         order.addDrink(drink1);

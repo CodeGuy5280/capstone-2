@@ -61,9 +61,9 @@ public class Drink {
         String choice = scanner.nextLine();
 
         switch (choice) {
-            case "1": return new Drink("Coke", "Medium", 2.00);
-            case "2": return new Drink("Dr. Pepper", "Medium", 2.00);
-            case "3": return new Drink("Sprite", "Medium", 2.00);
+            case "1": return new Drink("Coke", "Medium", 2.0);
+            case "2": return new Drink("Dr. Pepper", "Medium", 2.0);
+            case "3": return new Drink("Sprite", "Medium", 2.0);
             case "0": return null; // User cancelled
             default: System.out.println("Invalid drink choice.");
             return null;
