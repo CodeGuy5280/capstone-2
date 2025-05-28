@@ -54,14 +54,14 @@ public class Sandwich {
                 case "4":
                     return new Sandwich("TURKEY SWISS", "Wheat", "8-inch");
                 case "5":
-                    System.out.println("Initiating custom sandwich build...");
+                    System.out.println("Build a custom sandwich...");
                     return new Sandwich(); // Return an empty Sandwich object for customization
                 case "0":
                     System.out.println("Returning to Order Menu.");
-                    return null; // Signals to the calling method (e.g., OrderScreen) that no sandwich was selected
+                    return null; // Signals to the calling method (OrderScreen) that no sandwich was selected
                 default:
                     System.out.println("Invalid choice. Please enter a number between 0 and 5.");
-                    // Loop continues because 'running' isn't changed and no return/break
+                    // Loop continues if invalid
             }
         }
     }

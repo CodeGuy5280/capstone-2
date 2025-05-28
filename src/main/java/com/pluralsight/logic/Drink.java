@@ -7,7 +7,7 @@ public class Drink {
     private String size; // e.g., "small", "medium", "large"
     private double price;
 
-    public Drink(String name, String size) {
+    public Drink(String name, String size, double price) {
         this.name = name;
         this.size = size;
         this.price = price;
@@ -61,9 +61,9 @@ public class Drink {
         String choice = scanner.nextLine();
 
         switch (choice) {
-            case "1": return new Drink("Coke", "Medium");
-            case "2": return new Drink("Dr. Pepper", "Medium");
-            case "3": return new Drink("Sprite", "Medium");
+            case "1": return new Drink("Coke", "Medium", 2.00);
+            case "2": return new Drink("Dr. Pepper", "Medium", 2.00);
+            case "3": return new Drink("Sprite", "Medium", 2.00);
             case "0": return null; // User cancelled
             default: System.out.println("Invalid drink choice.");
             return null;
