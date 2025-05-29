@@ -67,13 +67,68 @@ public class Sandwich {
 
     public Sandwich() {
         // Constructor for custom build
+        this.breadType = breadType;
+        this.size = size;
+        this.name = name;
         this.meats = new ArrayList<>();
         this.cheeses = new ArrayList<>();
         this.regularToppings = new ArrayList<>();
         this.isToasted = false;
     }
 
-    // Getter methods for all fields
+    // Getter & Setter methods for all fields
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setMeats(ArrayList<String> meats) {
+        this.meats = meats;
+    }
+
+    public ArrayList<String> getExtraMeats() {
+        return extraMeats;
+    }
+
+    public void setExtraMeats(ArrayList<String> extraMeats) {
+        this.extraMeats = extraMeats;
+    }
+
+    public void setCheeses(ArrayList<String> cheeses) {
+        this.cheeses = cheeses;
+    }
+
+    public ArrayList<String> getExtraCheeses() {
+        return extraCheeses;
+    }
+
+    public void setExtraCheeses(ArrayList<String> extraCheeses) {
+        this.extraCheeses = extraCheeses;
+    }
+
+    public void setRegularToppings(ArrayList<String> regularToppings) {
+        this.regularToppings = regularToppings;
+    }
+
+    public ArrayList<String> getSauces() {
+        return sauces;
+    }
+
+    public void setSauces(ArrayList<String> sauces) {
+        this.sauces = sauces;
+    }
+
+    public ArrayList<String> getSides() {
+        return sides;
+    }
+
+    public void setSides(ArrayList<String> sides) {
+        this.sides = sides;
+    }
+
     public String getBreadType() {
         return breadType;
     }
@@ -98,7 +153,6 @@ public class Sandwich {
         return isToasted;
     }
 
-    // Setter methods (if needed, e.g., for custom build or modifying properties)
     public void setBreadType(String breadType) {
         this.breadType = breadType;
     }
