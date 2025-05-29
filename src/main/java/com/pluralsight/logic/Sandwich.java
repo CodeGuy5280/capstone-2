@@ -17,6 +17,7 @@ public class Sandwich {
     private ArrayList<String> sides = new ArrayList<>();   // Specific list for sides (like au jus)
     private boolean isToasted;
 
+
     public Sandwich(String name, String breadType, String size,
                     ArrayList<String> meats,
                     ArrayList<String> extraMeats,
@@ -39,7 +40,7 @@ public class Sandwich {
         this.isToasted = isToasted;
     }
 
-    //creation of prebuilt sandwiches using methods
+    //creation of prebuilt sandwiches using methods, only size and toasted values can be changed
     public static Sandwich createBLT(String size, boolean toasted) {
         return new Sandwich(
                 "BLT", "WHITE", size,
@@ -97,7 +98,6 @@ public class Sandwich {
     }
 
 
-
     public static Sandwich createPrebuiltSandwich(Scanner scanner) {
         while (true) {
             System.out.println("\n--- Select a Pre-Built Sandwich ---");
@@ -119,25 +119,18 @@ public class Sandwich {
                 return null;
             }
 
+            // Prompt for size and toasted options
+            String size = optionForSize(scanner);
+            boolean toasted = optionForToasted(scanner);
+
             //need to allow for sandwich size choices to be made
             switch (choice) {
-                case "1":
-                    return new Sandwich("BLT", "White", "8-inch");
-                case "2":
-                    return new Sandwich("CLUB", "Wheat", "8-inch");
-                case "3":
-                    return new Sandwich("ROAST BEEF", "Rye", "8-inch");
-                case "4":
-                    return new Sandwich("TURKEY SWISS", "Wheat", "8-inch");
-                case "5":
-                    System.out.println("Build a custom sandwich...");
-                    return new Sandwich(); // Return an empty Sandwich object for customization
-                case "0":
-                    System.out.println("Returning to Order Menu.");
-                    return null; // Signals to the calling method (OrderScreen) that no sandwich was selected
+                case "1": return createBLT(size, toasted);
+                case "2": return createClub(size, toasted);
+                case "3": return createRoastBeef(size, toasted);
+                case "4": return createTurkeySwiss(size, toasted);
                 default:
                     System.out.println("Invalid choice. Please enter a number between 0 and 5.");
-                    // Loop continues if invalid
             }
         }
     }
