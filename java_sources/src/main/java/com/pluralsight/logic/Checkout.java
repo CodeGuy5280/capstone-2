@@ -55,12 +55,12 @@ public class Checkout {
 
             // Write drink details
             for (Drink drink : order.getDrinks()) {
-                writer.write("Drink: " + drink.getName() + " (" + drink.getSize() + ")"+ " $" + drink.calculatePrice() + "\n");
+                writer.write("Drink: " + drink.getName() + " (" + drink.getSize() + ")\n");
             }
 
             // Write chips details
             for (Chips chips : order.getChips()) {
-                writer.write("Chips: " + chips.getFlavor() + " $" + chips.calculatePrice() + "\n");
+                writer.write("Chips: " + chips.getFlavor() + "\n");
             }
 
             // Write total price

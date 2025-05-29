@@ -467,16 +467,12 @@ public class Sandwich {
         // 8. Select sides
         while (true) {
             System.out.println("\n--- Add Sides ---");
-            System.out.println("1) Chips");
-            System.out.println("1) Chips");
-            System.out.println("2) Cookie");
-            System.out.println("3) Au Jus");
+            System.out.println("1) Chips\n2) Cookie\n3) Au Jus");
             System.out.println("0) Done with sides");
             System.out.print("Choice: ");
             String choice = scanner.nextLine();
 
             //TODO:add chips to this sides selection with price
-            //TODO:add cookie cost to sides
             switch (choice) {
                 case "1":
                     sides.add("Chips");
@@ -507,6 +503,7 @@ public class Sandwich {
         basePrice += extraMeats.size() * 1.00;
         basePrice += extraCheeses.size() * 0.75;
         basePrice += sides.size() * 1.50;
+
         return basePrice;
     }
 

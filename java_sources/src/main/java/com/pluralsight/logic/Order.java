@@ -34,22 +34,14 @@ public class Order {
     //total price calculation
     public double getTotalPrice() {
         double totalPrice = 0.0;
-
-        for (Sandwich sandwich : sandwich) {
-            totalPrice += sandwich.calculatePrice();
-        }
-
         for (Drink drink : drinks) {
             totalPrice += drink.calculatePrice();
         }
-
         for (Chips chips : chips) {
             totalPrice += chips.calculatePrice();
         }
-
         return totalPrice;
     }
-
 
     //getters to generate receipt
     public ArrayList<Sandwich> getSandwiches() {

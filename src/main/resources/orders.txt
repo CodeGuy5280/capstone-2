@@ -23,3 +23,112 @@ Sandwich:
 - Price: $13.5
 Total Price: $0.0
 
+=== New Order ===
+Sandwich:
+- Size: 8-inch
+- Toasted: Yes
+- Bread: WHITE
+- Meats: Bacon
+- Cheese: [Cheddar]
+- Toppings: Lettuce, Tomato
+- Sauces: Mayo
+- Price: $7.0
+Drink: Sprite (Large)
+Chips: BBQ
+Total Price: $4.5
+
+=== New Order ===
+Sandwich:
+- Size: 12-inch
+- Toasted: Yes
+- Bread: WHITE
+- Meats: Bacon
+- Cheese: [Cheddar]
+- Toppings: Lettuce, Tomato
+- Sauces: Mayo
+- Price: $9.0
+Total Price: $9.0
+
+=== New Order ===
+Sandwich:
+- Size: 4-inch
+- Toasted: Yes
+- Bread: WHITE
+- Meats: Bacon
+- Cheese: [Cheddar]
+- Toppings: Lettuce, Tomato
+- Sauces: Mayo
+- Price: $5.0
+Drink: Coke (Medium)
+Chips: Sour Cream & Onion
+Total Price: $9.0
+
+=== New Order ===
+Sandwich:
+- Size: 12-inch
+- Toasted: Yes
+- Bread: WHITE
+- Meats: Bacon
+- Cheese: [Cheddar]
+- Toppings: Lettuce, Tomato
+- Sauces: Mayo
+- Price: $9.0
+Drink: Coke (Large)
+Chips: Classic
+Total Price: $13.5
+
+=== New Order ===
+Sandwich:
+- Size: 12-inch
+- Toasted: Yes
+- Bread: WHITE
+- Meats: Bacon
+- Cheese: [Cheddar]
+- Toppings: Lettuce, Tomato
+- Sauces: Mayo
+- Price: $9.0
+Drink: Pepsi (Large3.0)
+Chips: Classic1.5
+Total Price: $13.5
+
+=== New Order ===
+Sandwich:
+- Size: 12-inch
+- Toasted: Yes
+- Bread: WHITE
+- Meats: Bacon
+- Cheese: [Cheddar]
+- Toppings: Lettuce, Tomato
+- Sauces: Mayo
+- Price: $9.0
+Drink: Sprite (Large$3.0)
+Chips: Salt & Vinegar$1.5
+Total Price: $13.5
+
+=== New Order ===
+Sandwich:
+- Size: 12-inch
+- Toasted: Yes
+- Bread: WHITE
+- Meats: Bacon
+- Cheese: [Cheddar]
+- Toppings: Lettuce, Tomato
+- Sauces: Mayo
+- Price: $9.0
+Drink: Sprite (Large $3.0)
+Chips: Sour Cream & Onion $1.5
+Total Price: $13.5
+
+=== New Order ===
+Sandwich:
+- Size: 12-inch
+- Toasted: No
+- Bread: RYE
+- Meats: Roast Beef
+- Cheese: [Provolone]
+- Toppings: Onions
+- Sauces: Horseradish Sauce
+- Price: $10.5
+Drink: Pepsi (Small) $2.0
+Total Price: $12.5
+
