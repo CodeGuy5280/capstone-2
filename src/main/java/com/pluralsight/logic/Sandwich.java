@@ -1,7 +1,7 @@
 package com.pluralsight.logic;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Sandwich {
@@ -17,7 +17,7 @@ public class Sandwich {
     private ArrayList<String> sides = new ArrayList<>();   // Specific list for sides (like au jus)
     private boolean isToasted;
 
-    public Sandwich(String name, String breadType, String size) {
+    private Sandwich(Builder builder) {
         // Constructor for pre-built
         this.breadType = breadType;
         this.size = size;
@@ -45,13 +45,13 @@ public class Sandwich {
             //need to allow for sandwich size choices to be made
             switch (choice) {
                 case "1":
-                    return new Sandwich("BLT", "White", "8-inch");
+                    return new Sandwich();
                 case "2":
-                    return new Sandwich("CLUB", "Wheat", "8-inch");
+                    return new Sandwich();
                 case "3":
-                    return new Sandwich("ROAST BEEF", "Rye", "8-inch");
+                    return new Sandwich();
                 case "4":
-                    return new Sandwich("TURKEY SWISS", "Wheat", "8-inch");
+                    return new Sandwich();
                 case "5":
                     System.out.println("Build a custom sandwich...");
                     return new Sandwich(); // Return an empty Sandwich object for customization
