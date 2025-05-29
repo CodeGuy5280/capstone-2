@@ -79,7 +79,8 @@ public class OrderScreen {
                     break;
                 case "4":
                     System.out.println("Checkout: ");
-                    //class.method();
+                    //TODO: Unable to call method here due to it not being STATIC, fix this
+                    Checkout.saveOrderToFile();
                     break;
                 case "0":
                     System.out.println("Order canceled! Returning to Homescreen...");
