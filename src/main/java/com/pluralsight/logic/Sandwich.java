@@ -14,7 +14,7 @@ public class Sandwich {
     private ArrayList<String> extraCheeses = new ArrayList<>(); // To track extra cheeses
     private ArrayList<String> regularToppings = new ArrayList<>(); // For veggies, sauces, etc.
     private ArrayList<String> sauces = new ArrayList<>(); // Specific list for sauces
-    private ArrayList<String> sides = new ArrayList<>();   // Specific list for sides (like au jus)
+    private ArrayList<String> sides = new ArrayList<>();   // Specific list for sides
     private boolean isToasted;
 
 
@@ -57,7 +57,7 @@ public class Sandwich {
 
     public static Sandwich createClub(String size, boolean toasted) {
         return new Sandwich(
-                "CLUB", "WHEAT", size,
+                "CLUB", "WHITE", size,
                 new ArrayList<>(List.of("Turkey", "Ham", "Bacon")),
                 new ArrayList<>(),
                 new ArrayList<>(List.of("Swiss")),
@@ -85,7 +85,7 @@ public class Sandwich {
 
     public static Sandwich createTurkeySwiss(String size, boolean toasted) {
         return new Sandwich(
-                "TURKEY SWISS", "WHITE", size,
+                "TURKEY SWISS", "SOURDOUGH", size,
                 new ArrayList<>(List.of("Turkey")),
                 new ArrayList<>(),
                 new ArrayList<>(List.of("Swiss")),
@@ -125,28 +125,38 @@ public class Sandwich {
             boolean toasted = optionForToasted(scanner);
 
             switch (choice) {
-                case "1": return createBLT(size, toasted);
-                case "2": return createClub(size, toasted);
-                case "3": return createRoastBeef(size, toasted);
-                case "4": return createTurkeySwiss(size, toasted);
+                case "1":
+                    return createBLT(size, toasted);
+                case "2":
+                    return createClub(size, toasted);
+                case "3":
+                    return createRoastBeef(size, toasted);
+                case "4":
+                    return createTurkeySwiss(size, toasted);
                 default:
                     System.out.println("Invalid choice. Please enter a number between 0 and 5.");
             }
         }
     }
+
     //size options
     private static String optionForSize(Scanner scanner) {
         while (true) {
             System.out.println("Choose a size: 1) 4-inch  2) 8-inch  3) 12-inch");
             String sizeChoice = scanner.nextLine();
             switch (sizeChoice) {
-                case "1": return "4-inch";
-                case "2": return "8-inch";
-                case "3": return "12-inch";
-                default: System.out.println("Invalid size. Please choose 1, 2, or 3.");
+                case "1":
+                    return "4-inch";
+                case "2":
+                    return "8-inch";
+                case "3":
+                    return "12-inch";
+                default:
+                    System.out.println("Invalid size. Please choose 1, 2, or 3.");
             }
         }
     }
+
     //toasted options
     private static boolean optionForToasted(Scanner scanner) {
         while (true) {
@@ -161,9 +171,9 @@ public class Sandwich {
 
     public Sandwich() {
         // Constructor for custom build
-        this.breadType = breadType;
-        this.size = size;
-        this.name = name;
+//        this.breadType = breadType;
+//        this.size = size;
+//        this.name = name;
         this.meats = new ArrayList<>();
         this.cheeses = new ArrayList<>();
         this.regularToppings = new ArrayList<>();
@@ -235,7 +245,7 @@ public class Sandwich {
         return meats;
     }
 
-    public ArrayList<String> getCheeses() {
+    public ArrayList<String> getCheese() {
         return cheeses;
     }
 
@@ -311,6 +321,7 @@ public class Sandwich {
             }
         }
     }
+
     public void buildYourOwn(Scanner scanner) {
         System.out.println("--- Build Your Own Sandwich ---");
 
@@ -353,14 +364,16 @@ public class Sandwich {
                 case "5":
                     this.meats.add("Bacon");
                     break;
-                case "0": System.out.println("Finished adding meats.");
+                case "0":
+                    System.out.println("Finished adding meats.");
                     selectingMeats = false;
                     break;
-                default: System.out.println("Invalid option. Try again.");
+                default:
+                    System.out.println("Invalid option. Try again.");
             }
         }
 
-       Cheese:
+        Cheese:
         // 5. Select cheeses
         while (true) {
             System.out.println("\n--- Add Cheeses ---");
@@ -370,12 +383,22 @@ public class Sandwich {
             String choice = scanner.nextLine();
 
             switch (choice) {
-                case "1": addCheese("Cheddar"); break;
-                case "2": addCheese("Swiss"); break;
-                case "3": addCheese("Provolone"); break;
-                case "4": addCheese("Pepper Jack"); break;
-                case "0": break Cheese;
-                default: System.out.println("Invalid option. Try again.");
+                case "1":
+                    addCheese("Cheddar");
+                    break;
+                case "2":
+                    addCheese("Swiss");
+                    break;
+                case "3":
+                    addCheese("Provolone");
+                    break;
+                case "4":
+                    addCheese("Pepper Jack");
+                    break;
+                case "0":
+                    break Cheese;
+                default:
+                    System.out.println("Invalid option. Try again.");
             }
         }
 
@@ -389,17 +412,29 @@ public class Sandwich {
             String choice = scanner.nextLine();
 
             switch (choice) {
-                case "1": addRegularTopping("Lettuce"); break;
-                case "2": addRegularTopping("Tomato"); break;
-                case "3": addRegularTopping("Onion"); break;
-                case "4": addRegularTopping("Spinach"); break;
-                case "5": addRegularTopping("Pickles"); break;
-                case "0": break Toppings;
-                default: System.out.println("Invalid option. Try again.");
+                case "1":
+                    addRegularTopping("Lettuce");
+                    break;
+                case "2":
+                    addRegularTopping("Tomato");
+                    break;
+                case "3":
+                    addRegularTopping("Onion");
+                    break;
+                case "4":
+                    addRegularTopping("Spinach");
+                    break;
+                case "5":
+                    addRegularTopping("Pickles");
+                    break;
+                case "0":
+                    break Toppings;
+                default:
+                    System.out.println("Invalid option. Try again.");
             }
         }
 
-       Sauces:
+        Sauces:
         // 7. Select sauce(s)
         while (true) {
             System.out.println("\n--- Add Sauces ---");
@@ -409,12 +444,22 @@ public class Sandwich {
             String choice = scanner.nextLine();
 
             switch (choice) {
-                case "1": sauces.add("Mayo"); break;
-                case "2": sauces.add("Mustard"); break;
-                case "3": sauces.add("Ranch"); break;
-                case "4": sauces.add("Horseradish Sauce"); break;
-                case "0": break Sauces;
-                default: System.out.println("Invalid option. Try again.");
+                case "1":
+                    sauces.add("Mayo");
+                    break;
+                case "2":
+                    sauces.add("Mustard");
+                    break;
+                case "3":
+                    sauces.add("Ranch");
+                    break;
+                case "4":
+                    sauces.add("Horseradish Sauce");
+                    break;
+                case "0":
+                    break Sauces;
+                default:
+                    System.out.println("Invalid option. Try again.");
             }
         }
 
@@ -429,15 +474,37 @@ public class Sandwich {
 
             //TODO:add chips to this sides selection with price
             switch (choice) {
-                case "1": sides.add("Chips"); break;
-                case "2": sides.add("Cookie"); break;
-                case "0": break Sides;
-                default: System.out.println("Invalid option. Try again.");
+                case "1":
+                    sides.add("Chips");
+                    break;
+                case "2":
+                    sides.add("Cookie");
+                    break;
+                case "0":
+                    break Sides;
+                default:
+                    System.out.println("Invalid option. Try again.");
             }
         }
         // 9. Set name
         this.name = "Custom Sandwich";
         System.out.println("\n✅ Your custom sandwich has been created!");
+    }
+    public double calculatePrice() {
+        double basePrice;
+
+        switch (size) {
+            case "4-inch": basePrice = 5.00; break;
+            case "8-inch": basePrice = 7.00; break;
+            case "12-inch": basePrice = 9.00; break;
+            default: basePrice = 6.00; break;
+        }
+
+        basePrice += extraMeats.size() * 1.00;
+        basePrice += extraCheeses.size() * 0.75;
+        basePrice += sides.size() * 1.50;
+
+        return basePrice;
     }
 
 }

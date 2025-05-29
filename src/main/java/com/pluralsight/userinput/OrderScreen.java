@@ -1,9 +1,6 @@
 package com.pluralsight.userinput;
 
-import com.pluralsight.logic.Chips;
-import com.pluralsight.logic.Drink;
-import com.pluralsight.logic.Order;
-import com.pluralsight.logic.Sandwich;
+import com.pluralsight.logic.*;
 
 import java.util.Scanner;
 
@@ -79,8 +76,10 @@ public class OrderScreen {
                     break;
                 case "4":
                     System.out.println("Checkout: ");
-                    //TODO: Unable to call method here due to it not being STATIC, fix this
-                    Checkout.saveOrderToFile();
+                    Checkout checkout = new Checkout(currentOrder);
+                    checkout.saveOrderToFile();
+                    System.out.println("Order saved.");
+                    orderInProgress =false;
                     break;
                 case "0":
                     System.out.println("Order canceled! Returning to Homescreen...");

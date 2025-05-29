@@ -1,0 +1,25 @@
+=== New Order ===
+Sandwich:
+- Size: 4-inch
+- Toasted: No
+- Bread: WHITE
+- Meats: Turkey, Ham, Bacon
+- Cheese: [Swiss]
+- Toppings: Lettuce, Tomato
+- Sauces: Mayo, Mustard
+- Price: $5.0
+Drink: Pepsi (Medium)
+Total Price: $2.5
+
+=== New Order ===
+Sandwich:
+- Size: 12-inch
+- Toasted: Yes
+- Bread: WHITE
+- Meats: Turkey, Ham, Chicken, Roast Beef, Bacon
+- Cheese: [Cheddar, Swiss, Provolone, Pepper Jack]
+- Toppings: Lettuce, Tomato, Onion, Spinach, Pickles
+- Sauces: Mustard, Mustard
+- Price: $13.5
+Total Price: $0.0
+
