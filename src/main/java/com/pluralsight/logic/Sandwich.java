@@ -113,17 +113,17 @@ public class Sandwich {
             //option to redirect to build your own menu
             if (choice.equals("5")) {
                 System.out.println("Build a custom sandwich...");
-                return new Sandwich();
+                Sandwich custom = new Sandwich();
+                custom.buildYourOwn(scanner);
+                return custom;
             } else if (choice.equals("0")) {
                 System.out.println("Returning to Order Menu.");
                 return null;
             }
-
             // Prompt for size and toasted options
             String size = optionForSize(scanner);
             boolean toasted = optionForToasted(scanner);
 
-            //need to allow for sandwich size choices to be made
             switch (choice) {
                 case "1": return createBLT(size, toasted);
                 case "2": return createClub(size, toasted);
@@ -134,6 +134,30 @@ public class Sandwich {
             }
         }
     }
+    //size options
+    private static String optionForSize(Scanner scanner) {
+        while (true) {
+            System.out.println("Choose a size: 1) 4-inch  2) 8-inch  3) 12-inch");
+            String sizeChoice = scanner.nextLine();
+            switch (sizeChoice) {
+                case "1": return "4-inch";
+                case "2": return "8-inch";
+                case "3": return "12-inch";
+                default: System.out.println("Invalid size. Please choose 1, 2, or 3.");
+            }
+        }
+    }
+    //toasted options
+    private static boolean optionForToasted(Scanner scanner) {
+        while (true) {
+            System.out.print("Would you like it toasted? (yes/no): ");
+            String toastedChoice = scanner.nextLine().trim().toLowerCase();
+            if (toastedChoice.equals("yes")) return true;
+            if (toastedChoice.equals("no")) return false;
+            System.out.println("Please type 'yes' or 'no'.");
+        }
+    }
+
 
     public Sandwich() {
         // Constructor for custom build
@@ -281,17 +305,139 @@ public class Sandwich {
                     break;
                 case "0":
                     System.out.println("Returning to order menu...");
+                    selected = false;
                 default:
                     System.out.println("Please select a valid bread option (1-4).");
             }
         }
     }
-    public void buildYourOwn() {
-        //connect with all options for selecting, serves as an interface for building a sandwich
-        //connect via Arraylists: bread, cheese, toppings, toasted (y/n)
+    public void buildYourOwn(Scanner scanner) {
+        System.out.println("--- Build Your Own Sandwich ---");
+
+        // 1. Choose size
+        this.size = optionForSize(scanner);
+
+        // 2. Toasted?
+        this.isToasted = optionForToasted(scanner);
+
+        // 3. Choose bread
+        selectBread(scanner);
+
+        // 4. Select meats
+        boolean selectingMeats = true;
+
+        while (selectingMeats) {
+            System.out.println("\n--- Add Meats ---");
+            System.out.println("1) Turkey");
+            System.out.println("2) Ham");
+            System.out.println("3) Roast Beef");
+            System.out.println("4) Bacon");
+            System.out.println("5) Salami");
+            System.out.println("0) Done with meats");
+            System.out.print("Choice: ");
+            String choice = scanner.nextLine();
+
+            switch (choice) {
+                case "1":
+                    this.meats.add("Turkey");
+                    break;
+                case "2":
+                    this.meats.add("Ham");
+                    break;
+                case "3":
+                    this.meats.add("Chicken");
+                    break;
+                case "4":
+                    this.meats.add("Roast Beef");
+                    break;
+                case "5":
+                    this.meats.add("Bacon");
+                    break;
+                case "0": System.out.println("Finished adding meats.");
+                    selectingMeats = false;
+                    break;
+                default: System.out.println("Invalid option. Try again.");
+            }
+        }
+
+       Cheese:
+        // 5. Select cheeses
+        while (true) {
+            System.out.println("\n--- Add Cheeses ---");
+            System.out.println("1) Cheddar\n2) Swiss\n3) Provolone\n4) Pepper Jack");
+            System.out.println("0) Done with cheeses");
+            System.out.print("Choice: ");
+            String choice = scanner.nextLine();
+
+            switch (choice) {
+                case "1": addCheese("Cheddar"); break;
+                case "2": addCheese("Swiss"); break;
+                case "3": addCheese("Provolone"); break;
+                case "4": addCheese("Pepper Jack"); break;
+                case "0": break Cheese;
+                default: System.out.println("Invalid option. Try again.");
+            }
+        }
+
+        Toppings:
+        // 6. Select regular toppings
+        while (true) {
+            System.out.println("\n--- Add Toppings ---");
+            System.out.println("1) Lettuce\n2) Tomato\n3) Onion\n4) Spinach\n5) Pickles");
+            System.out.println("0) Done with toppings");
+            System.out.print("Choice: ");
+            String choice = scanner.nextLine();
+
+            switch (choice) {
+                case "1": addRegularTopping("Lettuce"); break;
+                case "2": addRegularTopping("Tomato"); break;
+                case "3": addRegularTopping("Onion"); break;
+                case "4": addRegularTopping("Spinach"); break;
+                case "5": addRegularTopping("Pickles"); break;
+                case "0": break Toppings;
+                default: System.out.println("Invalid option. Try again.");
+            }
+        }
+
+       Sauces:
+        // 7. Select sauce(s)
+        while (true) {
+            System.out.println("\n--- Add Sauces ---");
+            System.out.println("1) Mayo\n2) Mustard\n3) Ranch\n4) Horseradish Sauce");
+            System.out.println("0) Done with sauces");
+            System.out.print("Choice: ");
+            String choice = scanner.nextLine();
+
+            switch (choice) {
+                case "1": sauces.add("Mayo"); break;
+                case "2": sauces.add("Mustard"); break;
+                case "3": sauces.add("Ranch"); break;
+                case "4": sauces.add("Horseradish Sauce"); break;
+                case "0": break Sauces;
+                default: System.out.println("Invalid option. Try again.");
+            }
+        }
+
+        Sides:
+        // 8. Select sides
+        while (true) {
+            System.out.println("\n--- Add Sides ---");
+            System.out.println("1) Chips\n2) Cookie\n3) Au Jus");
+            System.out.println("0) Done with sides");
+            System.out.print("Choice: ");
+            String choice = scanner.nextLine();
+
+            //TODO:add chips to this sides selection with price
+            switch (choice) {
+                case "1": sides.add("Chips"); break;
+                case "2": sides.add("Cookie"); break;
+                case "0": break Sides;
+                default: System.out.println("Invalid option. Try again.");
+            }
+        }
+        // 9. Set name
+        this.name = "Custom Sandwich";
+        System.out.println("\n✅ Your custom sandwich has been created!");
     }
 
-    public double calculatePrice() {
-        return calculatePrice();
-    }
 }

@@ -12,7 +12,7 @@ public class OrderScreen {
     private Order currentOrder;
 
     //constructor to assign currentOrder
-    public OrderScreen(){
+    public OrderScreen() {
         this.currentOrder = new Order();
     }
 
@@ -35,7 +35,12 @@ public class OrderScreen {
             switch (choice) {
                 case "1":
                     System.out.println("Select a sandwich or build your own: ");
-                    Sandwich.createPrebuiltSandwich(scanner);
+                    Sandwich selectedSandwich = Sandwich.createPrebuiltSandwich(scanner);
+                    //adding sandwich to order
+                    if (selectedSandwich != null) {
+                        currentOrder.addSandwich(selectedSandwich);
+                        System.out.println("Sandwich added to your order!");
+                    }
                     break;
                 case "2":
                     System.out.println("Select a drink: ");
