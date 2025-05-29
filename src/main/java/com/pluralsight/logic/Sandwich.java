@@ -17,41 +17,118 @@ public class Sandwich {
     private ArrayList<String> sides = new ArrayList<>();   // Specific list for sides (like au jus)
     private boolean isToasted;
 
-    private Sandwich(Builder builder) {
-        // Constructor for pre-built
+    public Sandwich(String name, String breadType, String size,
+                    ArrayList<String> meats,
+                    ArrayList<String> extraMeats,
+                    ArrayList<String> cheeses,
+                    ArrayList<String> extraCheeses,
+                    ArrayList<String> regularToppings,
+                    ArrayList<String> sauces,
+                    ArrayList<String> sides,
+                    boolean isToasted) {
+        this.name = name;
         this.breadType = breadType;
         this.size = size;
-        this.name = name;
-        this.meats = new ArrayList<>();
-        this.cheeses = new ArrayList<>();
-        this.regularToppings = new ArrayList<>();
-        this.isToasted = false;
+        this.meats = meats;
+        this.extraMeats = extraMeats;
+        this.cheeses = cheeses;
+        this.extraCheeses = extraCheeses;
+        this.regularToppings = regularToppings;
+        this.sauces = sauces;
+        this.sides = sides;
+        this.isToasted = isToasted;
+    }
+
+    //creation of prebuilt sandwiches using methods
+    public static Sandwich createBLT(String size, boolean toasted) {
+        return new Sandwich(
+                "BLT", "WHITE", size,
+                new ArrayList<>(List.of("Bacon")),
+                new ArrayList<>(),
+                new ArrayList<>(List.of("Cheddar")),
+                new ArrayList<>(),
+                new ArrayList<>(List.of("Lettuce", "Tomato")),
+                new ArrayList<>(List.of("Mayo")),
+                new ArrayList<>(),
+                toasted
+        );
+    }
+
+    public static Sandwich createClub(String size, boolean toasted) {
+        return new Sandwich(
+                "CLUB", "WHEAT", size,
+                new ArrayList<>(List.of("Turkey", "Ham", "Bacon")),
+                new ArrayList<>(),
+                new ArrayList<>(List.of("Swiss")),
+                new ArrayList<>(),
+                new ArrayList<>(List.of("Lettuce", "Tomato")),
+                new ArrayList<>(List.of("Mayo", "Mustard")),
+                new ArrayList<>(),
+                toasted
+        );
+    }
+
+    public static Sandwich createRoastBeef(String size, boolean toasted) {
+        return new Sandwich(
+                "ROAST BEEF", "RYE", size,
+                new ArrayList<>(List.of("Roast Beef")),
+                new ArrayList<>(),
+                new ArrayList<>(List.of("Provolone")),
+                new ArrayList<>(),
+                new ArrayList<>(List.of("Onions")),
+                new ArrayList<>(List.of("Horseradish Sauce")),
+                new ArrayList<>(List.of("Au Jus")),
+                toasted
+        );
+    }
+
+    public static Sandwich createTurkeySwiss(String size, boolean toasted) {
+        return new Sandwich(
+                "TURKEY SWISS", "WHITE", size,
+                new ArrayList<>(List.of("Turkey")),
+                new ArrayList<>(),
+                new ArrayList<>(List.of("Swiss")),
+                new ArrayList<>(),
+                new ArrayList<>(List.of("Spinach", "Tomato")),
+                new ArrayList<>(List.of("Ranch")),
+                new ArrayList<>(),
+                toasted
+        );
     }
 
 
-    public static Sandwich createPrebuiltSandwich(Scanner scanner) { // Method returns a Sandwich object
-        while (true) { // Loop indefinitely until a valid choice is made and returned, or user exits
+
+    public static Sandwich createPrebuiltSandwich(Scanner scanner) {
+        while (true) {
             System.out.println("\n--- Select a Pre-Built Sandwich ---");
             System.out.println("1) BLT");
             System.out.println("2) CLUB");
             System.out.println("3) ROAST BEEF");
             System.out.println("4) TURKEY SWISS");
-            System.out.println("5) BUILD YOUR OWN"); // This option should lead to the buildYourOwn process
-            System.out.println("0) Go Back to Order Menu");
+            System.out.println("5) BUILD YOUR OWN");
+            System.out.println("0) Back to Order Menu");
             System.out.print("Enter your choice: ");
-
             String choice = scanner.nextLine();
+
+            //option to redirect to build your own menu
+            if (choice.equals("5")) {
+                System.out.println("Build a custom sandwich...");
+                return new Sandwich();
+            } else if (choice.equals("0")) {
+                System.out.println("Returning to Order Menu.");
+                return null;
+            }
 
             //need to allow for sandwich size choices to be made
             switch (choice) {
                 case "1":
-                    return new Sandwich();
+                    return new Sandwich("BLT", "White", "8-inch");
                 case "2":
-                    return new Sandwich();
+                    return new Sandwich("CLUB", "Wheat", "8-inch");
                 case "3":
-                    return new Sandwich();
+                    return new Sandwich("ROAST BEEF", "Rye", "8-inch");
                 case "4":
-                    return new Sandwich();
+                    return new Sandwich("TURKEY SWISS", "Wheat", "8-inch");
                 case "5":
                     System.out.println("Build a custom sandwich...");
                     return new Sandwich(); // Return an empty Sandwich object for customization
