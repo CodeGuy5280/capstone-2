@@ -381,6 +381,7 @@ public class Sandwich {
             }
         }
 
+        //This is a label for the loop serving as a way to break out of the loop if 0 is selected -> see case "0"
         Cheese:
         // 5. Select cheeses
         while (true) {
@@ -410,6 +411,7 @@ public class Sandwich {
             }
         }
 
+        //This is a label for the loop serving as a way to break out of the loop if 0 is selected -> see case "0"
         Toppings:
         // 6. Select regular toppings
         while (true) {
@@ -442,6 +444,7 @@ public class Sandwich {
             }
         }
 
+        //This is a label for the loop serving as a way to break out of the loop if 0 is selected -> see case "0"
         Sauces:
         // 7. Select sauce(s)
         while (true) {
@@ -471,6 +474,7 @@ public class Sandwich {
             }
         }
 
+        //This is a label for the loop serving as a way to break out of the loop if 0 is selected -> see case "0"
         Sides:
         // 8. Select sides
         while (true) {
@@ -502,8 +506,9 @@ public class Sandwich {
         System.out.println("\n✅ Your custom sandwich has been created!");
     }
 
-    //Sandwich price calculator using basePrice, adding additional cost with each extra option
+    //Sandwich price calculator using basePrice, adding additional cost with each extra options
     public double calculatePrice() {
+        //Storing base price of a sandwich as seen in the switch statement
         double basePrice;
 
         switch (size) {
@@ -520,7 +525,7 @@ public class Sandwich {
                 basePrice = 6.00;
                 break;
         }
-
+        //Extra cost is added to the sandwich if additional toppings are selected
         basePrice += extraMeats.size() * 1.00;
         basePrice += extraCheeses.size() * 0.75;
         basePrice += sides.size() * 1.50;

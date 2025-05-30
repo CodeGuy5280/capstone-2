@@ -3,22 +3,26 @@ package com.pluralsight.logic;
 import java.util.Scanner;
 
 public class Drink {
+    //Field declaration of name, size, and price of drinks
     private String name;
     private String size; // e.g., "small", "medium", "large"
     private double price;
 
+    //Constructor for drink values
     public Drink(String name, String size, double price) {
         this.name = name;
         this.size = size;
         this.price = price;
     }
 
+    //Default constructor placeholder values
     public Drink() {
         this.name = "Pepsi";
         this.size = "small";
         this.price = 0.0;
     }
 
+    //Getter and Setter methods for updating the fields of drinks
     public String getName() {
         return name;
     }
@@ -43,10 +47,12 @@ public class Drink {
         this.price = price;
     }
 
+    //Provides the predefined drink price
     public double calculatePrice() {
         return this.price;
     }
 
+    //Method that returns price for a selected drink size
     private static double getPriceBySize(String size) {
         switch (size.toLowerCase()) {
             case "small":
@@ -97,6 +103,7 @@ public class Drink {
             }
         } // End of validDrinkTypeSelected loop
 
+        //Displays size options and allows selection
         boolean drinkSizeSelected = false;
         while (!drinkSizeSelected) { // Loop for drink size selection
             System.out.println("\n--- Select " + selectedDrinkName + " Size ---");
@@ -132,7 +139,7 @@ public class Drink {
             }
         } // End of drinkSizeSelected loop
 
-        // Return the fully configured Drink object
+        // Return the fully selected Drink object
         return new Drink(selectedDrinkName, selectedDrinkSize, calculatedPrice);
     }
 }

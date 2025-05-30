@@ -1,24 +1,22 @@
 package com.pluralsight.logic;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 
 public class Order {
-//look into use of Enum BreadType
 
     private ArrayList<Sandwich> sandwich = new ArrayList<>();
     private ArrayList<Drink> drinks = new ArrayList<>();
     private ArrayList<Chips> chips = new ArrayList<>();
 
-    //constructor for each sandwich, drink, and chip
+    //constructor for each sandwich(empty array to start) drink, and chip (all selections)
     public Order() {
         this.sandwich = new ArrayList<>();
         this.drinks = new ArrayList<>();
         this.chips = new ArrayList<>();
     }
 
-    //adding sandwich, drink, and chips to ArrayLists
+    //adding sandwich, drink, and chips to ArrayLists/Order
     public void addSandwich(Sandwich sandwich) {
         this.sandwich.add(sandwich);
     }
