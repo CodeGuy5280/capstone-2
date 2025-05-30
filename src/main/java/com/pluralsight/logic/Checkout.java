@@ -55,7 +55,7 @@ public class Checkout {
 
             // Write drink details
             for (Drink drink : order.getDrinks()) {
-                writer.write("Drink: " + drink.getName() + " (" + drink.getSize() + ")"+ " $" + drink.calculatePrice() + "\n");
+                writer.write("Drink: " + drink.getName() + " (" + drink.getSize() + ")" + " $" + drink.calculatePrice() + "\n");
             }
 
             // Write chips details

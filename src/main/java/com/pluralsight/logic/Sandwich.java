@@ -282,7 +282,6 @@ public class Sandwich {
     }
 
 
-
     public void selectBread(Scanner scanner) { // Takes Scanner as argument
         boolean selected = false;
         while (!selected) {
@@ -494,14 +493,23 @@ public class Sandwich {
         this.name = "Custom Sandwich";
         System.out.println("\n✅ Your custom sandwich has been created!");
     }
+
     public double calculatePrice() {
         double basePrice;
 
         switch (size) {
-            case "4-inch": basePrice = 5.00; break;
-            case "8-inch": basePrice = 7.00; break;
-            case "12-inch": basePrice = 9.00; break;
-            default: basePrice = 6.00; break;
+            case "4-inch":
+                basePrice = 5.00;
+                break;
+            case "8-inch":
+                basePrice = 7.00;
+                break;
+            case "12-inch":
+                basePrice = 9.00;
+                break;
+            default:
+                basePrice = 6.00;
+                break;
         }
 
         basePrice += extraMeats.size() * 1.00;

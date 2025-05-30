@@ -79,7 +79,7 @@ public class OrderScreen {
                     Checkout checkout = new Checkout(currentOrder);
                     checkout.saveOrderToFile();
                     System.out.println("Order saved.");
-                    orderInProgress =false;
+                    orderInProgress = false;
                     break;
                 case "0":
                     System.out.println("Order canceled! Returning to Homescreen...");

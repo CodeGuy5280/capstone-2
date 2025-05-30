@@ -12,7 +12,7 @@ public class Order {
     private ArrayList<Chips> chips = new ArrayList<>();
 
     //constructor for each sandwich, drink, and chip
-    public Order(){
+    public Order() {
         this.sandwich = new ArrayList<>();
         this.drinks = new ArrayList<>();
         this.chips = new ArrayList<>();
@@ -27,7 +27,7 @@ public class Order {
         this.drinks.add(drink);
     }
 
-    public void addChips(Chips chips){
+    public void addChips(Chips chips) {
         this.chips.add(chips);
     }
 
