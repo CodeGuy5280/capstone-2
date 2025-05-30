@@ -1,12 +1,13 @@
 package com.pluralsight;
 
 import com.pluralsight.userinput.HomeScreen;
-import com.pluralsight.userinput.OrderScreen;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 public class Main {
     public static void main(String[] args) {
 
 
-        HomeScreen homeScreen = new HomeScreen();
+        AtomicReference<HomeScreen> homeScreen = new AtomicReference<>(new HomeScreen());
     }
 }

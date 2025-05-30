@@ -64,6 +64,4 @@ public class Order {
         return chips;
     }
 
-    //create receipt that prints the order + order total and a message
-    //implement Checkout class for some of this
 }
