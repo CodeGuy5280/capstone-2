@@ -19,7 +19,7 @@ public class Checkout {
 
             // Write sandwich details
             for (Sandwich sandwich : order.getSandwiches()) {
-                writer.write("Sandwich:\n");
+                writer.write("Sandwich: " + sandwich.getName() + " " + "\n");
                 writer.write("- Size: " + sandwich.getSize() + "\n");
                 writer.write("- Toasted: " + (sandwich.isToasted() ? "Yes" : "No") + "\n");
                 writer.write("- Bread: " + sandwich.getBreadType() + "\n");

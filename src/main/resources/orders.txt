@@ -160,3 +160,29 @@ Drink: Coke (Small) $2.0
 Chips: Salt & Vinegar $1.5
 Total Price: $8.5
 
+=== New Order ===
+Sandwich:
+- Size: 8-inch
+- Toasted: Yes
+- Bread: WHITE
+- Meats: Bacon
+- Cheese: [Cheddar]
+- Toppings: Lettuce, Tomato
+- Sauces: Mayo
+- Price: $7.0
+Drink: Coke (Small) $2.0
+Total Price: $9.0
+
+=== New Order ===
+Sandwich: BLT 
+- Size: 4-inch
+- Toasted: Yes
+- Bread: WHITE
+- Meats: Bacon
+- Cheese: [Cheddar]
+- Toppings: Lettuce, Tomato
+- Sauces: Mayo
+- Price: $5.0
+Drink: Coke (Small) $2.0
+Total Price: $7.0
+
