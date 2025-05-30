@@ -5,9 +5,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Sandwich {
+    //Stores values in variables
     private String name; // Added for pre-built names like BLT, CLUB
     private String breadType;
     private String size; // e.g., "4-inch", "8-inch", "12-inch"
+    //Stores all choices for each selection by user
     private ArrayList<String> meats = new ArrayList<>();
     private ArrayList<String> extraMeats = new ArrayList<>(); // To track extra meats
     private ArrayList<String> cheeses = new ArrayList<>();
@@ -15,9 +17,10 @@ public class Sandwich {
     private ArrayList<String> regularToppings = new ArrayList<>(); // For veggies, sauces, etc.
     private ArrayList<String> sauces = new ArrayList<>(); // Specific list for sauces
     private ArrayList<String> sides = new ArrayList<>();   // Specific list for sides
+    //If Toasted or not
     private boolean isToasted;
 
-
+    //Constructor accepting many parameters for the Sandwich
     public Sandwich(String name, String breadType, String size,
                     ArrayList<String> meats,
                     ArrayList<String> extraMeats,
@@ -27,6 +30,7 @@ public class Sandwich {
                     ArrayList<String> sauces,
                     ArrayList<String> sides,
                     boolean isToasted) {
+        //This is used to assign parameters to the instances above ^
         this.name = name;
         this.breadType = breadType;
         this.size = size;
@@ -40,7 +44,7 @@ public class Sandwich {
         this.isToasted = isToasted;
     }
 
-    //creation of prebuilt sandwiches using methods, only size and toasted values can be changed
+    //creation of predefined prebuilt sandwiches using methods, only size and toasted values can be changed
     public static Sandwich createBLT(String size, boolean toasted) {
         return new Sandwich(
                 "BLT", "WHITE", size,
@@ -97,7 +101,8 @@ public class Sandwich {
         );
     }
 
-
+    //Menu start for selection of prebuilt sandwich, option to BUILD YOUR OWN or go back to Order Menu
+    //
     public static Sandwich createPrebuiltSandwich(Scanner scanner) {
         while (true) {
             System.out.println("\n--- Select a Pre-Built Sandwich ---");
@@ -139,7 +144,7 @@ public class Sandwich {
         }
     }
 
-    //size options
+    //Helper methods to select Size from options
     private static String optionForSize(Scanner scanner) {
         while (true) {
             System.out.println("Choose a size: 1) 4-inch  2) 8-inch  3) 12-inch");
@@ -157,7 +162,7 @@ public class Sandwich {
         }
     }
 
-    //toasted options
+    //Helper methods to select Toasted from options
     private static boolean optionForToasted(Scanner scanner) {
         while (true) {
             System.out.print("Would you like it toasted? (yes/no): ");
@@ -168,7 +173,7 @@ public class Sandwich {
         }
     }
 
-
+    //Default constructor used for building a CUSTOM SANDWICH
     public Sandwich() {
         // Constructor for custom build
 //        this.breadType = breadType;
@@ -181,6 +186,7 @@ public class Sandwich {
     }
 
     // Getter & Setter methods for all fields
+    //Allows other classes to change private variables
     public String getName() {
         return name;
     }
@@ -269,6 +275,7 @@ public class Sandwich {
         isToasted = toasted;
     }
 
+    //Add ingredients methods
     public void addMeat(String meat) {
         this.meats.add(meat);
     }
@@ -282,6 +289,7 @@ public class Sandwich {
     }
 
 
+    //User choice of bread type
     public void selectBread(Scanner scanner) { // Takes Scanner as argument
         boolean selected = false;
         while (!selected) {
@@ -321,6 +329,7 @@ public class Sandwich {
         }
     }
 
+    //All options to BUILD YOUR OWN SANDWICH, loops for each choice to add more
     public void buildYourOwn(Scanner scanner) {
         System.out.println("--- Build Your Own Sandwich ---");
 
@@ -355,13 +364,13 @@ public class Sandwich {
                     this.meats.add("Ham");
                     break;
                 case "3":
-                    this.meats.add("Chicken");
-                    break;
-                case "4":
                     this.meats.add("Roast Beef");
                     break;
-                case "5":
+                case "4":
                     this.meats.add("Bacon");
+                    break;
+                case "5":
+                    this.meats.add("Salami");
                     break;
                 case "0":
                     System.out.println("Finished adding meats.");
@@ -474,7 +483,6 @@ public class Sandwich {
             System.out.print("Choice: ");
             String choice = scanner.nextLine();
 
-            //TODO:add chips to this sides selection with price
             //TODO:add cookie cost to sides
             switch (choice) {
                 case "1":
@@ -494,6 +502,7 @@ public class Sandwich {
         System.out.println("\n✅ Your custom sandwich has been created!");
     }
 
+    //Sandwich price calculator using basePrice, adding additional cost with each extra option
     public double calculatePrice() {
         double basePrice;
 
