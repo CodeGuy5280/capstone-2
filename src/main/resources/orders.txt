@@ -186,3 +186,24 @@ Sandwich: BLT
 Drink: Coke (Small) $2.0
 Total Price: $7.0
 
+=== New Order ===
+Sandwich: BLT 
+- Size: 4-inch
+- Toasted: Yes
+- Bread: WHITE
+- Meats: Bacon
+- Cheese: [Cheddar]
+- Toppings: Lettuce, Tomato
+- Sauces: Mayo
+- Price: $5.0
+Sandwich: BLT 
+- Size: 4-inch
+- Toasted: Yes
+- Bread: WHITE
+- Meats: Bacon
+- Cheese: [Cheddar]
+- Toppings: Lettuce, Tomato
+- Sauces: Mayo
+- Price: $5.0
+Total Price: $10.0
+

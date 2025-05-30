@@ -19,6 +19,7 @@ public class Checkout {
         String fileName = ("src/main/resources/orders.txt");
 
         //Creates FileWriter, appends to file above ^
+        //Try block used for resource management (auto closes)
         try (FileWriter writer = new FileWriter(fileName, true)) {
             writer.write("=== New Order ===\n");
 

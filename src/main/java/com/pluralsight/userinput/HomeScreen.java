@@ -28,7 +28,7 @@ public class HomeScreen {
                 //newOrder method called to begin the order process in OrderScreen Class
                 orderScreen.newOrder();
             } else if (choice.equals("0")) {
-                //If 0 is selected, exit the aplication
+                //If 0 is selected, exit the application
                 System.out.println("Exiting the application... Goodbye!");
                 homeSelect = false;
                 //If input is not recognized as 1 or 0 error is presented to user, they are asked to try again

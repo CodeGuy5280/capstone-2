@@ -81,7 +81,6 @@ public class Drink {
             System.out.print("Enter your choice: ");
             String drinkChoice = scanner.nextLine();
 
-            // FIX: Removed the unnecessary and infinite 'while (drinkInput)' loop
             switch (drinkChoice) {
                 case "1":
                     selectedDrinkName = "Coke";

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Chips {
-//stores flavor and boolean of isSelected
+    //stores flavor and boolean of isSelected
     private String flavor;
     private boolean isSelected;
     //predefined Chip flavors

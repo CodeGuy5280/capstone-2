@@ -65,7 +65,7 @@ public class OrderScreen {
                     String chipsChoice = scanner.nextLine();
 
                     Chips selectedChips = null;
-                    //Takes user input, converts to index for selection
+                    //Takes user input, converts to index for selection, - 1 to get correct index
                     int chipsSelection = Integer.parseInt(chipsChoice) - 1;
                     //Selection is validated through comparison operators
                     if (chipsSelection >= 0 && chipsSelection < Chips.getAvailableFlavors().size()) {
@@ -94,7 +94,7 @@ public class OrderScreen {
                     //Cancels order, returns to HomeScreen
                     orderInProgress = false;
                     break;
-                    //Default for invalid input
+                //Default for invalid input
                 default:
                     System.out.println("Please select a valid option.");
             }
